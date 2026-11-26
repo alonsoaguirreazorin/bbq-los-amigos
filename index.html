@@ -161,6 +161,7 @@ h2{margin-top:10px;font-family:var(--display);font-weight:400;font-size:clamp(35
 .carta dd small{display:block;margin-top:3px;font:600 13px/1.2 var(--sans);color:var(--crema2)}
 .carta dd.gratis{color:var(--llama)}
 .carta dd.limite{color:var(--fuego)}
+.carta dd.lugar{font-size:22px}
 
 .maletero{margin-top:34px;text-align:center}
 .maletero__dibujo{position:relative;margin:0 -8px;padding-top:6px;
@@ -348,6 +349,7 @@ h2{margin-top:10px;font-family:var(--display);font-weight:400;font-size:clamp(35
       <dl class="carta">
         <div class="carta__fila"><dt>Día</dt><span class="carta__puntos"></span><dd>6 de diciembre</dd></div>
         <div class="carta__fila"><dt>Hora</dt><span class="carta__puntos"></span><dd>12:30<small>empieza la BBQ</small></dd></div>
+        <div class="carta__fila"><dt>Lugar</dt><span class="carta__puntos"></span><dd class="lugar">Los Mondragones</dd></div>
         <div class="carta__fila"><dt>Adultos</dt><span class="carta__puntos"></span><dd>15 €<small>por cabeza</small></dd></div>
         <div class="carta__fila"><dt>Niños</dt><span class="carta__puntos"></span><dd class="gratis">0 €<small>los niños no pagan</small></dd></div>
         <div class="carta__fila"><dt>Límite</dt><span class="carta__puntos"></span><dd class="limite">1 de diciembre<small>último día para apuntarse</small></dd></div>
@@ -1478,11 +1480,11 @@ function mostrarHecho(regs, recien) {
   const ult = regs[regs.length - 1], plural = regs.length > 1 || sonDos(ult.tipo);
   if (recien) {
     $('#hecho-titulo').textContent = sonDos(ult.tipo) ? '¡Apuntados!' : '¡Apuntado/a!';
-    $('#hecho-sub').textContent = (sonDos(ult.tipo) ? 'Migue ya os ha visto en la lista y os guarda sitio' : 'Migue ya te ha visto en la lista y te guarda sitio') + ' junto a las brasas. El 6 de diciembre, a las 12:30.';
+    $('#hecho-sub').textContent = (sonDos(ult.tipo) ? 'Migue ya os ha visto en la lista y os guarda sitio' : 'Migue ya te ha visto en la lista y te guarda sitio') + ' junto a las brasas. El 6 de diciembre, a las 12:30, en Los Mondragones.';
     $('#hecho-rotulo').textContent = plural ? 'Os toca pagar' : 'Te toca pagar';
   } else {
     $('#hecho-titulo').textContent = plural ? 'Ya estáis apuntados' : 'Ya estás apuntado/a';
-    $('#hecho-sub').textContent = 'Desde este móvil ya se ha hecho esta inscripción. Nos vemos el 6 de diciembre a las 12:30.';
+    $('#hecho-sub').textContent = 'Desde este móvil ya se ha hecho esta inscripción. Nos vemos el 6 de diciembre a las 12:30, en Los Mondragones.';
     $('#hecho-rotulo').textContent = regs.length > 1 ? 'En total, desde este móvil' : (plural ? 'Os toca pagar' : 'Te toca pagar');
   }
   $('#hecho-total').textContent = euros(total);
